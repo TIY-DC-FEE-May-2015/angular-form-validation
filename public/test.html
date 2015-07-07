@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="validationApp">
   <head>
     <title>Form Validation</title>
     <link href="index.css" rel="stylesheet" />
   </head>
   <body>
+  	<h1>Contact Us </h1>
+  	<div class="form"  ng-controller="FormController">
+  		<div class="title">Name</div>
+  		<input type="text" placeholder="Sally Doe" ng-model="name" />
+  		<div ng-show="invalid.name" class="red-bar"></div>
 
+  		<div class="title">Email</div>
+  		<input type="email" placeholder="SallyDoe@abc.com" ng-model="email" />
+  		<div ng-show="invalid.email" class="red-bar"></div>
+  		<p ng-show="invalid.email" class="empty" >"Email must have @ "</p>
+
+  		<div class="title">Website</div>
+  		<input type="url" placeholder="http://sallydoe.com" ng-model="website"/>
+  		<div ng-show="invalid.website" class="red-bar"></div>
+  		<p ng-show="invalid.website" class="empty" >"Website must have http://"</p>
+
+  		<div class="title">Message</div>
+  		<textarea ng-model="message" placeholder="Just a friendly message..." ></textarea>
+  		<div ng-show="invalid.message" class="red-bar"></div>
+
+  		<input type="submit" class="submit" ng-click="submitNewForm()"/>
+
+
+  	</div>
     <script src="libs/angular.js"></script>
+    <script src="libs/underscore.js"></script>
     <script src="index.js"></script>
     
   </body>
