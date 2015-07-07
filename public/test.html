@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="validationApp">
   <head>
     <title>Form Validation</title>
     <link href="index.css" rel="stylesheet" />
   </head>
   <body>
 
+  	<div id="formContainer" ng-controller="ListController">
+
+      <form>
+      <h2>Contact Us</h2>
+      	<p>Name</p>
+      	<div ng-show="invalid.name" class="red-bar"></div>
+      	<input type="text" id="nameInput" ng-model="name" />
+      	<div ng-show="invalid.name" class="red-text">Name cannot be left empty</div>
+      	<p>Email</p>
+      	<div ng-show="invalid.email" class="red-bar"></div>
+      	<input type="email" id="emailInput" ng-model="email"/>
+      	<div ng-show="invalid.email" class="red-text">Email must have contain an '@'</div>
+      	<p>Website</p>
+      	<div ng-show="invalid.website" class="red-bar"></div>
+      	<input type="url" id="websiteInput" ng-model="website"/>
+      	<div ng-show="invalid.website" class="red-text">Website must start with http://</div>
+      	<p>Message</p>
+      	<div ng-show="invalid.message" class="red-bar"></div>
+      	<textarea id="messageInput" ng-model="message" ></textarea><br />
+      	<div ng-show="invalid.message" class="red-text">Message cannot be left empty</div>
+      	<br />
+      	
+      	<button id="submitButton" ng-click="submitForm()">Submit</button>
+
+      </form>
+
+    </div>
+
+
+    <script src="libs/underscore.js"></script>
     <script src="libs/angular.js"></script>
     <script src="index.js"></script>
     
