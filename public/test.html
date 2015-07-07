@@ -1,13 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="formApp">
   <head>
     <title>Form Validation</title>
     <link href="index.css" rel="stylesheet" />
   </head>
   <body>
 
+  	<div class="container" ng-controller="FormController">
+
+  		<h1> Contact Us </h1>
+
+  		<div class="info name">Name </br> 
+  			<input type="text" ng-model="name" /> 
+  			<div ng-show="invalid.name" class="red-error"> This field cannot be empty </div>
+  		</div>
+
+  		<div class="info email">Email</br> 
+  			<input type="email" ng-model="email" /> 
+  			<div ng-show="invalid.email" class="red-error"> Must contain @ symbol</div>
+  		</div>
+
+  		<div class="info website"> Website </br>  
+  			<input type="url" ng-model="website" /> 
+  			<div ng-show="invalid.website" class="red-error"> Must begin with http:// </div>
+  		</div>
+
+  		<div class="info message"> Message </br>  
+  			<input type="text" ng-model="message" /> 
+  			<div ng-show="invalid.message" class="red-error">This field cannot be empty</div>
+  		</div>
+
+  		<div class="info"><button class="submit" ng-click="submitForm()">Submit</button></div>
+  	</div>
+
+  	<script type="libs/underscore.js"></script>
     <script src="libs/angular.js"></script>
     <script src="index.js"></script>
     
   </body>
-</html>
+</html> 
