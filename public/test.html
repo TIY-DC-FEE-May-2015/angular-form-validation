@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="formApp">
   <head>
     <title>Form Validation</title>
-    <link href="index.css" rel="stylesheet" />
+    <link href="index.less" rel="stylesheet" />
   </head>
   <body>
+
+  <div class="page-container">
+  	<div class="title">
+  		<h2>This is not a Contact Form</h2>
+  	</div>
+
+  	<div class="form-container" ng-controller="FormController">
+  		<div class="finished-message" ng-class="{active: (submitted === true)}">Your message has been submitted!</div>
+  		<form >
+  		<textarea placeholder="write your dumb message here" ng-model="message" ng-class="{invalid: (invalid.message)}"></textarea>
+
+  		<div class="row">
+  			<input type="text" placeholder="Name" ng-model="name" ng-class="{invalid: (invalid.name)}">
+  		</div>
+  		<div class="row">
+  			<input type="text" placeholder="Email" ng-model="email" ng-class="{invalid: (invalid.email)}">
+  		</div>
+
+  		<div class="row">
+  			<input type="text" placeholder="Website" ng-model="website" ng-class="{invalid: (invalid.website)}">
+  		</div>
+   		<div class="error-message" ng-class="{active: (errorMessage)}" ng-bind="errorMessage"></div>
+  		<div class="row">
+  			<button ng-click="submitForm()">Submit Message</button>
+  		</div>
+  		</form>
+
+
+  	</div>
+  </div>
+
 
     <script src="libs/angular.js"></script>
     <script src="index.js"></script>
