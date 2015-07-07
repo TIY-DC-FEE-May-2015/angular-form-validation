@@ -14,10 +14,10 @@
   	<div class="form-container" ng-controller="FormController">
   		<div class="finished-message" ng-class="{active: (submitted === true)}">Your message has been submitted!</div>
   		<form >
-  		<textarea placeholder="write your dumb message here" ng-model="message" ng-class="{invalid: (invalid.message)}"></textarea>
+  		<textarea placeholder="write your message here" ng-model="message" ng-class="{invalid: (invalid.message)}"></textarea>
 
   		<div class="row">
-  			<input type="text" placeholder="Name" ng-model="name" ng-class="{invalid: (invalid.name)}">
+  			<input type="text" placeholder="Name" ng-model="name" ng-class="{invalid: (invalid.name)}"> </input>
   		</div>
   		<div class="row">
   			<input type="text" placeholder="Email" ng-model="email" ng-class="{invalid: (invalid.email)}">
