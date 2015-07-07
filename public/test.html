@@ -37,7 +37,7 @@
 				<div class="name-input input">
 					<div class="title">Name</div>
 
-					<input type="text" ng-model="name" placeholder="Sally Smith"/>
+					<input type="text" ng-model="name" placeholder="Sally Smith" id="nameDiv" class="red-border"/>
 
 					<div ng-show="invalid.name" class="red"></div>
 				</div>
@@ -45,7 +45,7 @@
 				<div class="email-input input">
 					<div class="title">Email</div>
 
-					<input type="text" ng-model="email" placeholder="ssmith@email.com" />
+					<input type="text" ng-model="email" placeholder="ssmith@email.com" id="emailDiv" class="red-border"/>
 
 					<div ng-show="invalid.email" class="red"></div>
 				</div>
@@ -53,7 +53,7 @@
 				<div class="title-input input">
 					<div class="title">Website</div>
 
-					<input type="text" ng-model="website" placeholder="http://mssmith.net"/>
+					<input type="text" ng-model="website" placeholder="http://mssmith.net" id="webDiv" class="red-border"/>
 
 					<div ng-show="invalid.website" class="red"></div>
 				</div>
@@ -61,13 +61,13 @@
 				<div class="message-container input">
 					<div class="title">Message</div>
 
-					<input ng-model="message" placeholder="A friendly message..." />
+					<input ng-model="message" placeholder="A friendly message..." id="messageDiv" class="red-border"/>
 
 					<div ng-show="invalid.message" class="red"></div>
 				</div>
 
   	<!-- Subtmit Button -->
-  		<button ng-click="submitButton()">Add New Person</button>	
+  		<button ng-click="submitButton()">Submit</button>	
 
   	</div>
 

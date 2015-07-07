@@ -3,13 +3,46 @@ angular.module("contactInfoApp", [])
 
 		$scope.invalid = {}
 
-		$scope.people = [
-		]
+		$scope.people = []
 
-		// Add New Person Button
+		var nameDiv = document.getElementById("nameDiv")
+
+		$scope.$watch("name", function() {
+			if ($scope.name !== undefined) {
+				nameDiv.setAttribute("class", "none")
+			}
+		})
+
+		var emailDiv = document.getElementById("emailDiv")
+
+		$scope.$watch("email", function() {
+			var email = $scope.email
+			console.log(email, email.includes("@"))
+			if (email.includes("@") === true) {
+				emailDiv.setAttribute("class", "none")
+			}
+		})
+
+		var webDiv = document.getElementById("webDiv")
+
+		$scope.$watch("website", function() {
+			if ($scope.website === "http://") {
+				webDiv.setAttribute("class", "none")
+			}
+		})
+
+		var messageDiv = document.getElementById("messageDiv")
+
+		$scope.$watch("message", function() {
+			if ($scope.message !== undefined) {
+				messageDiv.setAttribute("class", "none")
+			}
+		})
+
+// Add New Person Button
 		$scope.submitButton = function() {
 
-			// Checks to see if fields are filled
+		// Checks to see if fields are filled
 			$scope.invalid = {
 				name: !($scope.name),
 				email: !($scope.email),
@@ -21,7 +54,7 @@ angular.module("contactInfoApp", [])
 				return
 			}
 
-// check if email had @
+		// check if email had @
 			var emailString = ($scope.email).split("")
 
 			var validEmail = function() {
@@ -37,7 +70,7 @@ angular.module("contactInfoApp", [])
 			if (validEmail() === false) {
 				return
 			}
-// check if website starts with http://
+		// check if website starts with http://
 			var websiteString = ($scope.website).split("")
 			var first = _.first(websiteString, 7)
 
@@ -61,6 +94,7 @@ angular.module("contactInfoApp", [])
 				message: $scope.message
 			})
 			console.log($scope.people)
+			alert("Form Submitted.  Thanks!")
 
 			$scope.name = ""
 			$scope.email = ""
