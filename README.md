@@ -20,4 +20,4 @@ I used CSS to style the form to be responsive. Examples that I modelled this aft
 
 This project is LESS enabled.
 
-I used `$scope.$watch` to validate the form as a user is typing in content. The form shows a gray bar on the bottom of the input element if the input is left empty as the user is typing and an error message if the input contianes errors. 
+I used `$scope.$watch` to validate the form as a user is typing in content. The form shows a gray bar on the bottom of the input element if the input is left empty as the user is typing and an error message if the input contains errors. 
