@@ -1,11 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="contactInfoApp">
   <head>
     <title>Form Validation</title>
     <link href="index.css" rel="stylesheet" />
   </head>
   <body>
+  	<div ng-controller="ListController">
 
+  		<div class="contactInfo-table hidden">
+		<!-- Table 
+			<div ng-repeat="person in people">
+				<div class="name-container">
+					<div>Name</div>
+					<div ng-bind="person.name"></div>
+				</div>
+
+				<div class="email-container">
+					<div>Email</div>
+					<div ng-bind="person.email"></div>
+				</div>
+
+				<div class="website-container">
+					<div>Website</div>
+					<div ng-bind="person.website"></div>
+				</div>
+
+				<div class="message-container">
+					<div>Message</div>
+					<div ng-bind="person.message"></div>
+				</div>
+			</div> -->
+		</div>
+		<!-- Input Row -->
+		<div class="input-container">
+			<div class="input-title">Contact Us</div>
+				<div class="name-input input">
+					<div class="title">Name</div>
+
+					<input type="text" ng-model="name" placeholder="Sally Smith" id="nameDiv" class="red-border"/>
+
+					<div ng-show="invalid.name" class="red"></div>
+				</div>
+
+				<div class="email-input input">
+					<div class="title">Email</div>
+
+					<input type="text" ng-model="email" placeholder="ssmith@email.com" id="emailDiv" class="red-border"/>
+
+					<div ng-show="invalid.email" class="red"></div>
+				</div>
+
+				<div class="title-input input">
+					<div class="title">Website</div>
+
+					<input type="text" ng-model="website" placeholder="http://mssmith.net" id="webDiv" class="red-border"/>
+
+					<div ng-show="invalid.website" class="red"></div>
+				</div>
+
+				<div class="message-container input">
+					<div class="title">Message</div>
+
+					<input ng-model="message" placeholder="A friendly message..." id="messageDiv" class="red-border"/>
+
+					<div ng-show="invalid.message" class="red"></div>
+				</div>
+
+  	<!-- Subtmit Button -->
+  		<button ng-click="submitButton()">Submit</button>	
+
+  	</div>
+
+  	<script src="libs/underscore.js"></script>
     <script src="libs/angular.js"></script>
     <script src="index.js"></script>
     
