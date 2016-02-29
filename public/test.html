@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="validationApp">
   <head>
     <title>Form Validation</title>
     <link href="index.css" rel="stylesheet" />
   </head>
   <body>
 
+  		<div ng-controller ="listController">
+
+  		<form ng-submit = "submitNewPerson()">
+  			<div class="informationGroup">
+  				<div class ="title"> Contact Us</div>
+  				<div class = "row">
+  					Name <input type ="text" placeholder="Sally Smith" ng-model="name" /> 
+  						<div ng-show="invalid.name" class ="invalid" >Name can not be left empty</div>
+
+  					Email <input type ="email" placeholder="ssmith@gmail.com" ng-model="email" />
+  						<div ng-show="invalid.email" class ="invalid"> Email must have contain an @</div>
+
+  					Website <input type ="url" placeholder="http://mssmith.net" ng-model="website" />
+  						<div ng-show="invalid.website" class ="invalid">Website must start with http://</div>
+
+  					Message <input type ="textarea"placeholder="A friendly message..." ng-model="message" />
+  						<div ng-show="invalid.message" class ="invalid">Message can not be left empty</div>
+  					<button id="another button" input type="submit" value="Submit Button" /> Submit Button
+  				</div>
+  					
+
+  				
+	  				<div class = "randomPerson"
+	  					ng-repeat="person in people">
+
+	  						<div ng-bind ="person.name"></div>
+	  						<div ng-bind ="person.email"></div>
+	  						<div ng-bind ="person.website"></div>
+	  						<div ng-bind ="person.message"></div>
+	  					</div>
+	  				</div>
+	  		</form>
+
+  			</div>
+  		</div>
+
+
+
+  	<script src ="libs/underscore.js"></script>
     <script src="libs/angular.js"></script>
     <script src="index.js"></script>
     
